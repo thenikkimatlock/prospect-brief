@@ -96,7 +96,7 @@ Running a full audit on every prospect wastes time. The skill has two filters:
 
 ## Example output
 
-See [`example-output.md`](example-output.md) for a complete brief generated for a fictional HVAC company.
+See [`example-output.md`](example-output.md) for a complete brief generated on a real Toledo-area home improvement contractor.
 
 ---
 
@@ -106,7 +106,7 @@ After the brief, the skill asks if you want to push the prospect to your CRM:
 
 - **GHL**: Creates contact, adds the full brief as a note (split across two notes to avoid character limits), creates a follow-up task with the voicemail script pre-loaded. Due date is auto-calculated to avoid Fridays and weekends.
 - **Instantly**: Adds lead to your campaign with the pattern interrupt opener as the personalization field.
-- **Plain list**: Outputs a one-line summary you can paste into a spreadsheet.
+- **Text file**: Saves the complete brief as a plain .txt file you can open on any device.
 
 ---
 

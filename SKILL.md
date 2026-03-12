@@ -59,7 +59,7 @@ If no prior seller context exists, ask these questions in a single message. Do n
 > 1. What do you sell? (One sentence: the offer, not a category)
 > 2. What problem does it solve for them specifically?
 > 3. What's your typical price point or engagement model?
-> 4. What CRM do you use for outreach? (GHL, Instantly, spreadsheet, or nothing set up yet)
+> 4. What CRM do you use for outreach? (GHL, Instantly, or nothing set up yet)
 > 5. *(GHL users only)* What's your GHL Location ID? (Found in GHL under Settings > Business Profile > Location ID — needed to create contacts via API)
 
 Once answered, store this as **Seller Context** in this exact format at the top of your working notes before proceeding:
@@ -69,7 +69,7 @@ SELLER CONTEXT
 Offer: [one sentence]
 Problem solved: [one sentence]
 Price point: [stated amount or model]
-CRM: [GHL / Instantly / spreadsheet / none]
+CRM: [GHL / Instantly / none]
 GHL Location ID: [ID or "N/A"]
 ```
 
@@ -620,7 +620,7 @@ After the brief is complete, ask the user if they want to log this prospect.
 
 "Brief is done. Want me to push [Business Name] to your CRM so it doesn't die in this window?"
 
-If yes: ask which system: GHL, Instantly, or plain list.
+If yes: ask which system: GHL, Instantly, or save as text file.
 
 **GHL handoff:** Do all three of the following: not just contact creation:
 
@@ -695,10 +695,7 @@ EMAIL DRAFT:
 
 Note: Instantly requires a verified sending domain and warmed email account. Flag if the domain is in warmup. Prospect email quality: flag if the address found is `info@` or a generic role address — direct named addresses have meaningfully higher response rates.
 
-**Plain list fallback:** If no CRM is set up, output a clean text summary at minimum:
-`[Business Name] | [Niche] | [Score]/12 | [Owner name or unknown] | [Phone] | [Email or contact form] | [Pattern interrupt opener: one line]`
-
-This gives the user something they can copy into a spreadsheet. A brief that exists only in a chat window is a brief that will never be acted on.
+**Plain text fallback:** If no CRM is set up, save the complete brief as a plain .txt file using the Write tool. Default path: `prospect-briefs/[business-slug].txt` (or ask the user where to save it). A .txt file opens on any device without any tools. A brief that exists only in a chat window is a brief that will never be acted on.
 
 ---
 
@@ -729,7 +726,7 @@ After collecting the update, do three things:
 
 1. **Rewrite the relevant section of the brief in-window**: update the Owner, Status, and any problem or opener that changed. Output the revised sections explicitly, not just "noted."
 
-2. **Update the CRM record immediately.** Don't wait for the user to ask. If they used GHL, call the API to update the contact with the new status tag and append the call notes. If they used Instantly, ask them to manually update the contact status (Instantly doesn't have a write API for contact notes). If plain list, output the updated line.
+2. **Update the CRM record immediately.** Don't wait for the user to ask. If they used GHL, call the API to update the contact with the new status tag and append the call notes. If they used Instantly, ask them to manually update the contact status (Instantly doesn't have a write API for contact notes). If saved as text file, update and resave the file.
 
 3. **Reset the follow-up clock.** If the call hit voicemail: Day 3 email is now Day 1 (the email was already sent, the call was Day 5: restart the post-voicemail sequence). If they said "send me an email": they engaged: skip Day 3, go straight to sending the brief within the hour.
 
